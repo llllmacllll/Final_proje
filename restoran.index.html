@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran menüsü</title>
+        <style>
+            .baslik {
+                font-size: 70px;
+                background-color: aquamarine;
+                color: black;
+                text-align: center;
+            }
+            #temaBtn {
+                position: fixed;
+        top: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background: #333;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            }
+
+    
+    .menu-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .menu-container div {
+        text-align: center;
+    }
+
+    .menu-container img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+     #temaBtn:hover {
+        background: #555;
+     }
+     .dark-mode {
+        background: #121212;
+        color: #ffffff;
+    }
+    body {
+        transition: background 0.3s, color 0.3s;
+        background: #ffffff;
+        color: #000000;
+        font-family: Arial, sans-serif;
+    }
+
+</style>
+</head>
+<body>
+    <h1 class="baslik"> Hoş Geldiniz</h1>
+    <button id="temaBtn">🌙</button>
+    <br>
+
+
+<div class="menu-container">
+    <div>
+        <img src="resim1.jpg">
+        <p>Kebap</p>
+    </div>
+    <div>
+        <img src="resim2.jpg">
+        <p>Pizza</p>
+    </div>
+    <div>
+        <img src="resim3.jpg">
+        <p>Tatlı</p>
+    </div>
+</div>
+<script>
+const btn = document.getElementById("temaBtn");
+
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            btn.textContent = "☀️"; // açık tema
+        } else {
+            btn.textContent = "🌙"; // koyu tema
+        }
+    });
+</script>
+    
+</body>
+</html>
